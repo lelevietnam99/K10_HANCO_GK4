@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Thi Hán Cổ HK4 - Giải Thích Chi Tiết Câu 41 đến 60</title>
+    <style>
+        :root {
+            --bg-color: #090a16;
+            --card-bg: rgba(22, 27, 46, 0.75);
+            --border-color: rgba(120, 119, 198, 0.3);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-cyan: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-gold: #facc15;
+            --accent-green: #4ade80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 25% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 75% 80%, rgba(192, 132, 252, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.85) 0%, #090a16 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Ccircle cx='180' cy='140' r='1.5'/%3E%3Ccircle cx='320' cy='260' r='1'/%3E%3Ccircle cx='660' cy='140' r='2'/%3E%3Ccircle cx='740' cy='460' r='1.2'/%3E%3Ccircle cx='240' cy='640' r='1.8'/%3E%3Ccircle cx='540' cy='730' r='1'/%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .subtitle {
+            color: var(--accent-purple);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .info-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            border-bottom: 2px solid rgba(250, 204, 21, 0.3);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .question-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .q-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .q-hanzi {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            font-family: 'Kaiti SC', 'SimSun', serif;
+            margin: 0 4px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .option-box {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .option-box.correct {
+            background: rgba(74, 222, 128, 0.15);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .explanation-box {
+            margin-top: 12px;
+            padding: 12px 15px;
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .explanation-box p {
+            margin-bottom: 6px;
+        }
+
+        .explanation-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Ôn Thi Hán Cổ HK4 - Phần IV: Ngữ Pháp</h1>
+        <div class="subtitle">Giải Thích Chi Tiết Bài Tập Trắc Nghiệm (Câu 41 – Câu 60)</div>
+        <div class="info-bar">
+            <span>Giáo Thọ Sư: NS. Huệ Chơn</span>
+            <span>📍 Khóa X Khoa ĐTTX</span>
+            <span>🌌 Trang HTML Phần 4</span>
+        </div>
+    </header>
+
+    <div class="card">
+        <h2>🚀 DANH SÁCH CÂU HỎI VÀ PHÂN TÍCH NGỮ PHÁP CHI TIẾT</h2>
+
+        <!-- Câu 41 -->
+        <div class="question-item">
+            <div class="q-title">Câu 41: <span class="q-hanzi">惟不能讀書。</span> Trong câu này, <span class="q-hanzi">惟</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Phó từ ✓</div>
+                <div class="option-box">c/ Liên từ</div>
+                <div class="option-box">d/ Tính từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Duy bất năng độc thư.</p>
+                <p><b>Dịch nghĩa:</b> <i>Chỉ</i> là không thể đọc sách.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">惟</span> (duy) chỉ sự giới hạn phạm vi ("chỉ", "duy chỉ"), làm <b>Phó từ giới hạn</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 42 -->
+        <div class="question-item">
+            <div class="q-title">Câu 42: <span class="q-hanzi">同坐岸上。</span> Trong câu này, <span class="q-hanzi">同</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Phó từ ✓</div>
+                <div class="option-box">c/ Liên từ</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Đồng tọa ngạn thượng.</p>
+                <p><b>Dịch nghĩa:</b> <i>Cùng</i> ngồi trên bờ.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">同</span> (đồng) đứng trước động từ <span class="q-hanzi">坐</span> chỉ sự phối hợp hành động ("cùng nhau"), là <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 43 -->
+        <div class="question-item">
+            <div class="q-title">Câu 43: <span class="q-hanzi">我等與眾生，皆共成佛道。</span> Trong câu này, <span class="q-hanzi">皆</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box correct">c/ Phó từ ✓</div>
+                <div class="option-box">d/ Trợ từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Ngã đẳng dữ chúng sinh, giai cộng thành Phật đạo.</p>
+                <p><b>Dịch nghĩa:</b> Chúng ta cùng tất cả chúng sinh, <i>đều</i> cùng thành đạo Phật.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">皆</span> (giai) đứng trước động từ chỉ phạm vi toàn bộ ("đều", "tất cả"), đóng vai trò <b>Phó từ chỉ phạm vi</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 44 -->
+        <div class="question-item">
+            <div class="q-title">Câu 44: <span class="q-hanzi">霜降後，葉漸黃。</span> Trong câu này, <span class="q-hanzi">漸</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Liên từ</div>
+                <div class="option-box correct">b/ Phó từ ✓</div>
+                <div class="option-box">c/ Trợ từ</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Sương giáng hậu, diệp tiệm hoàng.</p>
+                <p><b>Dịch nghĩa:</b> Sau mùa sương giáng, lá cây <i>dần dần</i> ngả vàng.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">漸</span> (tiệm) đứng trước tính từ <span class="q-hanzi">黃</span> bổ nghĩa diễn tiến theo thời gian ("dần dần"), làm <b>Phó từ diễn tiến</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 45 -->
+        <div class="question-item">
+            <div class="q-title">Câu 45: <span class="q-hanzi">漸入佳境。</span> Trong câu này, <span class="q-hanzi">漸</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box correct">a/ Phó từ ✓</div>
+                <div class="option-box">b/ Giới từ</div>
+                <div class="option-box">c/ Trợ từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Tiệm nhập giai cảnh.</p>
+                <p><b>Dịch nghĩa:</b> <i>Dần dần</i> đi vào cảnh đẹp (ngày càng hay hơn).</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">漸</span> đứng trước động từ <span class="q-hanzi">入</span> chỉ quá trình diễn tiến từng bước, là <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 46 -->
+        <div class="question-item">
+            <div class="q-title">Câu 46: <span class="q-hanzi">循序漸進。</span> Trong câu này, <span class="q-hanzi">漸</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Phó từ ✓</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Tuần tự tiệm tiến.</p>
+                <p><b>Dịch nghĩa:</b> Nương theo thứ tự mà <i>dần dần</i> tiến lên.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">漸</span> đứng trước động từ <span class="q-hanzi">進</span> bổ nghĩa về trạng thái tiến triển từ từ, là <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 47 -->
+        <div class="question-item">
+            <div class="q-title">Câu 47: <span class="q-hanzi">吾矛之利，物無不陷也。</span> Trong câu này, <span class="q-hanzi">也</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box correct">b/ Trợ từ ✓</div>
+                <div class="option-box">c/ Liên từ</div>
+                <div class="option-box">d/ Phó từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Ngô mâu chi lợi, vật vô bất hãm dã.</p>
+                <p><b>Dịch nghĩa:</b> Cây giáo của ta sắc bén, không vật gì không đâm thủng được <i>vậy</i>.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">也</span> (dã) đứng cuối câu để khép lại câu khẳng định/phán đoán, đóng vai trò <b>Trợ từ ngữ khí</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 48 -->
+        <div class="question-item">
+            <div class="q-title">Câu 48: <span class="q-hanzi">莊兒將入學。</span> Trong câu này, <span class="q-hanzi">將</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Liên từ</div>
+                <div class="option-box">b/ Trợ từ</div>
+                <div class="option-box correct">c/ Phó từ ✓</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Trang nhi tương nhập học.</p>
+                <p><b>Dịch nghĩa:</b> Cháu Trang <i>sắp</i> đi học.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">將</span> (tương) đứng trước động từ <span class="q-hanzi">入學</span> chỉ thời gian sắp diễn ra, là <b>Phó từ thời gian</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 49 -->
+        <div class="question-item">
+            <div class="q-title">Câu 49: <span class="q-hanzi">又能營巢。</span> Trong câu này, <span class="q-hanzi">又</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Phó từ ✓</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Hựu năng doanh sào.</p>
+                <p><b>Dịch nghĩa:</b> <i>Lại</i> có thể làm tổ.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">又</span> (hựu) biểu thị ý bổ sung hoặc lặp lại ("lại", "còn"), đóng vai trò <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 50 -->
+        <div class="question-item">
+            <div class="q-title">Câu 50: <span class="q-hanzi">人在燭旁，壁上有影。</span> Trong câu này, <span class="q-hanzi">旁</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box correct">a/ Phương vị từ ✓</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Phó từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân tại chúc bàng, bích thượng hữu ảnh.</p>
+                <p><b>Dịch nghĩa:</b> Người ở <i>bên cạnh</i> ngọn nến, trên tường có bóng.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">旁</span> (bàng) đi sau danh từ <span class="q-hanzi">燭</span> (ngọn nến) để chỉ vị trí không gian, là <b>Phương vị từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 51 -->
+        <div class="question-item">
+            <div class="q-title">Câu 51: <span class="q-hanzi">人在燭旁，壁上有影。</span> Trong câu này, <span class="q-hanzi">上</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box correct">a/ Phương vị từ ✓</div>
+                <div class="option-box">b/ Giới từ</div>
+                <div class="option-box">c/ Phó từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân tại chúc bàng, bích thượng hữu ảnh.</p>
+                <p><b>Dịch nghĩa:</b> Người ở bên ngọn nến, <i>trên</i> tường có bóng.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">上</span> (thượng) đi sau danh từ <span class="q-hanzi">壁</span> (vách tường) chỉ vị trí không gian, là <b>Phương vị từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 52 -->
+        <div class="question-item">
+            <div class="q-title">Câu 52: <span class="q-hanzi">人坐影亦坐。</span> Trong câu này, <span class="q-hanzi">亦</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Liên từ</div>
+                <div class="option-box">b/ Giới từ</div>
+                <div class="option-box">c/ Trợ từ</div>
+                <div class="option-box correct">d/ Phó từ ✓</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân tọa ảnh diệc tọa.</p>
+                <p><b>Dịch nghĩa:</b> Người ngồi bóng <i>cũng</i> ngồi.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">亦</span> (diệc) đứng trước động từ <span class="q-hanzi">坐</span> chỉ sự tương đồng ("cũng"), làm <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 53 -->
+        <div class="question-item">
+            <div class="q-title">Câu 53: <span class="q-hanzi">人行影亦行。</span> Trong câu này, <span class="q-hanzi">亦</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box">b/ Giới từ</div>
+                <div class="option-box correct">c/ Phó từ ✓</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân hành ảnh diệc hành.</p>
+                <p><b>Dịch nghĩa:</b> Người đi bóng <i>cũng</i> đi.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">亦</span> đứng trước động từ <span class="q-hanzi">行</span>, làm <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 54 -->
+        <div class="question-item">
+            <div class="q-title">Câu 54: <span class="q-hanzi">雨將晴，河水清。</span> Trong câu này, <span class="q-hanzi">將</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Phó từ ✓</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Vũ tương tình, hà thủy thanh.</p>
+                <p><b>Dịch nghĩa:</b> Mưa <i>sắp</i> tạnh, nước sông trong.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">將</span> đứng trước động từ/tính từ <span class="q-hanzi">晴</span> (tạnh) biểu thị thời gian sắp xảy ra, đóng vai trò <b>Phó từ thời gian</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 55 -->
+        <div class="question-item">
+            <div class="q-title">Câu 55: <span class="q-hanzi">山之大者，草，木生之，禽獸居之。</span> Trong câu này, <span class="q-hanzi">之</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box">c/ Phó từ</div>
+                <div class="option-box correct">d/ Trợ từ ✓</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Sơn chi đại giả, thảo, mộc sinh chi, cầm thú cư chi.</p>
+                <p><b>Dịch nghĩa:</b> Ngọn núi mà lớn ấy, cỏ cây sinh sống ở đó, chim thú ở trên đó.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> đứng giữa danh từ <span class="q-hanzi">山</span> và cụm tính từ <span class="q-hanzi">大者</span> để kết nối định ngữ, đóng vai trò <b>Trợ từ kết cấu</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 56 -->
+        <div class="question-item">
+            <div class="q-title">Câu 56: <span class="q-hanzi">鬚眉皆白。</span> Trong câu này, <span class="q-hanzi">皆</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box correct">c/ Phó từ ✓</div>
+                <div class="option-box">d/ Trợ từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Tu my giai bạch.</p>
+                <p><b>Dịch nghĩa:</b> Râu và lông mày <i>đều</i> bạc.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">皆</span> (giai) đứng trước tính từ <span class="q-hanzi">白</span> chỉ phạm vi tổng thể ("đều"), đóng vai trò <b>Phó từ chỉ phạm vi</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 57 -->
+        <div class="question-item">
+            <div class="q-title">Câu 57: <span class="q-hanzi">常居穴中。</span> Trong câu này, <span class="q-hanzi">常</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Liên từ</div>
+                <div class="option-box">b/ Trợ từ</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box correct">d/ Phó từ ✓</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Thường cư huyệt trung.</p>
+                <p><b>Dịch nghĩa:</b> <i>Thường</i> sống ở trong hang.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">常</span> (thường) đứng trước động từ <span class="q-hanzi">居</span> chỉ tần suất thực hiện hành động ("thường xuyên"), đóng vai trò <b>Phó từ chỉ tần suất</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 58 -->
+        <div class="question-item">
+            <div class="q-title">Câu 58: <span class="q-hanzi">同坐岸上。</span> Trong câu này, <span class="q-hanzi">上</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box correct">d/ Phương vị từ ✓</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Đồng tọa ngạn thượng.</p>
+                <p><b>Dịch nghĩa:</b> Cùng ngồi <i>trên</i> bờ.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">上</span> đi sau danh từ <span class="q-hanzi">岸</span> chỉ vị trí không gian ("trên bờ"), làm <b>Phương vị từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 59 -->
+        <div class="question-item">
+            <div class="q-title">Câu 59: <span class="q-hanzi">牛力大，能耕田。</span> Trong câu này, <span class="q-hanzi">能</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Trợ động từ ✓</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Ngưu lực đại, năng canh điền.</p>
+                <p><b>Dịch nghĩa:</b> Trâu/Bò sức mạnh, <i>có thể</i> cày ruộng.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">能</span> (năng) đứng trước động từ <span class="q-hanzi">耕田</span> biểu thị khả năng thực hiện hành động, đóng vai trò <b>Trợ động từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 60 -->
+        <div class="question-item">
+            <div class="q-title">Câu 60: <span class="q-hanzi">有福同享，有難同當。</span> Trong câu này, <span class="q-hanzi">同</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box correct">a/ Phó từ ✓</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Trợ từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Hữu phúc đồng hưởng, hữu nạn đồng đương.</p>
+                <p><b>Dịch nghĩa:</b> Có phúc <i>cùng</i> hưởng, có họa <i>cùng</i> chịu.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">同</span> đứng trước động từ <span class="q-hanzi">享</span>, <span class="q-hanzi">當</span> biểu thị cách thức phối hợp hành động cùng nhau, đóng vai trò <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Đề Cương Ôn Thi Hán Cổ HK4 - Chúc bạn học tốt và ôn thi đạt kết quả xuất sắc!</p>
+    </footer>
+</div>
+
+</body>
+</html>

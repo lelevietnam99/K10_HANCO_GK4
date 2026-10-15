@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Thi Hán Cổ HK4 - Giải Thích Chi Tiết Câu 81 đến 100</title>
+    <style>
+        :root {
+            --bg-color: #090a16;
+            --card-bg: rgba(22, 27, 46, 0.75);
+            --border-color: rgba(120, 119, 198, 0.3);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-cyan: #38bdf8;
+            --accent-purple: #c084fc;
+            --accent-gold: #facc15;
+            --accent-green: #4ade80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(192, 132, 252, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.85) 0%, #090a16 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Ccircle cx='130' cy='150' r='1.5'/%3E%3Ccircle cx='330' cy='230' r='1'/%3E%3Ccircle cx='630' cy='150' r='2'/%3E%3Ccircle cx='710' cy='430' r='1.2'/%3E%3Ccircle cx='220' cy='630' r='1.8'/%3E%3Ccircle cx='570' cy='720' r='1'/%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .subtitle {
+            color: var(--accent-purple);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .info-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            border-bottom: 2px solid rgba(250, 204, 21, 0.3);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .question-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .q-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .q-hanzi {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            font-family: 'Kaiti SC', 'SimSun', serif;
+            margin: 0 4px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .option-box {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .option-box.correct {
+            background: rgba(74, 222, 128, 0.15);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .explanation-box {
+            margin-top: 12px;
+            padding: 12px 15px;
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .explanation-box p {
+            margin-bottom: 6px;
+        }
+
+        .explanation-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Ôn Thi Hán Cổ HK4 - Phần IV: Ngữ Pháp</h1>
+        <div class="subtitle">Giải Thích Chi Tiết Bài Tập Trắc Nghiệm (Câu 81 – Câu 100)</div>
+        <div class="info-bar">
+            <span>Giáo Thọ Sư: NS. Huệ Chơn</span>
+            <span>📍 Khóa X Khoa ĐTTX</span>
+            <span>🌌 Trang HTML Phần 6</span>
+        </div>
+    </header>
+
+    <div class="card">
+        <h2>🚀 DANH SÁCH CÂU HỎI VÀ PHÂN TÍCH NGỮ PHÁP CHI TIẾT</h2>
+
+        <!-- Câu 81 -->
+        <div class="question-item">
+            <div class="q-title">Câu 81: <span class="q-hanzi">父慈子孝，家庭幸福。</span> Trong câu này, <span class="q-hanzi">子</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Liên từ</div>
+                <div class="option-box">b/ Giới từ</div>
+                <div class="option-box correct">c/ Danh từ ✓</div>
+                <div class="option-box">d/ Phó từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Phụ từ tử hiếu, gia đình hạnh phúc.</p>
+                <p><b>Dịch nghĩa:</b> Cha hiền <i>con</i> thảo, gia đình hạnh phúc.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">子</span> (tử) ở đây đóng vai trò làm chủ ngữ trong tiểu cú <span class="q-hanzi">子孝</span>, chỉ đối tượng "người con", do đó là <b>Danh từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 82 -->
+        <div class="question-item">
+            <div class="q-title">Câu 82: <span class="q-hanzi">昇龍城昔號龍編地。</span> Trong câu này, <span class="q-hanzi">昔</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Trợ từ</div>
+                <div class="option-box">c/ Liên từ</div>
+                <div class="option-box correct">d/ Phó từ ✓</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Thăng Long thành tích hiệu Long Biên địa.</p>
+                <p><b>Dịch nghĩa:</b> Thành Thăng Long <i>ngày xưa</i> gọi là đất Long Biên.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">昔</span> (tích) đứng trước động từ <span class="q-hanzi">號</span> bổ nghĩa về thời gian quá khứ ("xưa kia", "ngày trước"), đóng vai trò <b>Phó từ thời gian</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 83 -->
+        <div class="question-item">
+            <div class="q-title">Câu 83: <span class="q-hanzi">王，姓徵，諱側，貉將之女。</span> Trong câu này, <span class="q-hanzi">之</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box correct">a/ Trợ từ kết cấu ✓</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box">c/ Phó từ</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Vương, tính Trưng, húy Trắc, Lạc tướng chi nữ.</p>
+                <p><b>Dịch nghĩa:</b> Vương họ Trưng, tên húy là Trắc, con gái <i>của</i> Lạc tướng.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> nối định ngữ <span class="q-hanzi">貉將</span> (Lạc tướng) và trung tâm ngữ <span class="q-hanzi">女</span> (con gái), đóng vai trò <b>Trợ từ kết cấu</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 84 -->
+        <div class="question-item">
+            <div class="q-title">Câu 84: <span class="q-hanzi">舟已行矣，而劍不行。</span> Trong câu này, <span class="q-hanzi">已</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Liên từ</div>
+                <div class="option-box">b/ Trợ từ</div>
+                <div class="option-box correct">c/ Phó từ ✓</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Chu dĩ hành hĩ, nhi kiếm bất hành.</p>
+                <p><b>Dịch nghĩa:</b> Thuyền <i>đã</i> đi rồi, mà thanh kiếm không đi.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">已</span> (dĩ) đứng trước động từ <span class="q-hanzi">行</span> chỉ sự hoàn thành của hành động ("đã"), đóng vai trò <b>Phó từ thời gian</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 85 -->
+        <div class="question-item">
+            <div class="q-title">Câu 85: <span class="q-hanzi">兩漁翁。</span> Trong câu này, <span class="q-hanzi">兩</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box correct">a/ Số từ ✓</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box">c/ Phó từ</div>
+                <div class="option-box">d/ Trợ từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Lưỡng ngư ông.</p>
+                <p><b>Dịch nghĩa:</b> <i>Hai</i> ông chài.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">兩</span> (lưỡng) chỉ số lượng cụ thể (hai), đóng vai trò <b>Số từ</b> làm định ngữ cho danh từ <span class="q-hanzi">漁翁</span>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 86 -->
+        <div class="question-item">
+            <div class="q-title">Câu 86: <span class="q-hanzi">庭中種桂，其葉常綠。</span> Trong câu này, <span class="q-hanzi">常</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box">c/ Trợ từ</div>
+                <div class="option-box correct">d/ Phó từ ✓</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Đình trung chủng quế, kỳ diệp thường lục.</p>
+                <p><b>Dịch nghĩa:</b> Trong sân trồng quế, lá của nó <i>thường</i> xanh.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">常</span> (thường) đứng trước tính từ <span class="q-hanzi">綠</span> bổ nghĩa cho trạng thái diễn ra thường xuyên, đóng vai trò <b>Phó từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 87 -->
+        <div class="question-item">
+            <div class="q-title">Câu 87: <span class="q-hanzi">山之大者，草，木生之，禽獸居之。</span> Trong câu này, <span class="q-hanzi">之</span> (chữ thứ 3) là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box">b/ Giới từ</div>
+                <div class="option-box correct">c/ Đại từ ✓</div>
+                <div class="option-box">d/ Trợ từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Sơn chi đại giả, thảo, mộc sinh chi, cầm thú cư chi.</p>
+                <p><b>Dịch nghĩa:</b> Ngọn núi lớn ấy, cỏ cây sinh sống ở đó, chim thú ở trên <i>đó</i>.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> thứ ba làm tân ngữ đứng sau động từ <span class="q-hanzi">居</span> (ở), thay thế cho đối tượng ngọn núi (<span class="q-hanzi">山</span>), đóng vai trò <b>Đại từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 88 -->
+        <div class="question-item">
+            <div class="q-title">Câu 88: <span class="q-hanzi">我國獨立自王始，可謂女中第一英雄。</span> Trong câu này, <span class="q-hanzi">中</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box correct">b/ Phương vị từ ✓</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Ngã quốc độc lập tự vương thủy, khả vị nữ trung đệ nhất anh hùng.</p>
+                <p><b>Dịch nghĩa:</b> Nước ta độc lập tự xưng vương bắt đầu từ đây, có thể gọi là vị anh hùng số một <i>trong hàng/trong giới</i> nữ nhi.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">中</span> (trung) đi sau danh từ <span class="q-hanzi">女</span> để giới hạn vị trí/phạm vi ("trong số"), đóng vai trò <b>Phương vị từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 89 -->
+        <div class="question-item">
+            <div class="q-title">Câu 89: <span class="q-hanzi">誠無窮之利也。</span> Trong câu này, <span class="q-hanzi">之</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box correct">a/ Trợ từ kết cấu ✓</div>
+                <div class="option-box">b/ Phó từ</div>
+                <div class="option-box">c/ Liên từ</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Thành vô cùng chi lợi dã.</p>
+                <p><b>Dịch nghĩa:</b> Thật là cái lợi vô cùng vậy.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> nối giữa tính từ/định ngữ <span class="q-hanzi">無窮</span> (vô cùng) và danh từ/trung tâm ngữ <span class="q-hanzi">利</span> (cái lợi), đóng vai trò <b>Trợ từ kết cấu</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 90 -->
+        <div class="question-item">
+            <div class="q-title">Câu 90: <span class="q-hanzi">人之身體，以衣護之，以食養之。</span> Trong câu này, <span class="q-hanzi">之</span> (chữ thứ 1) là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Phó từ</div>
+                <div class="option-box correct">c/ Trợ từ kết cấu ✓</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân chi thân thể, dĩ y hộ chi, dĩ thực dưỡng chi.</p>
+                <p><b>Dịch nghĩa:</b> Thân thể <i>của</i> con người, lấy áo che chở nó, lấy thức ăn nuôi dưỡng nó.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> thứ nhất đứng giữa <span class="q-hanzi">人</span> và <span class="q-hanzi">身體</span> biểu thị quan hệ sở hữu ("của"), đóng vai trò <b>Trợ từ kết cấu</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 91 -->
+        <div class="question-item">
+            <div class="q-title">Câu 91: <span class="q-hanzi">人之身體，以衣護之，以食養之。</span> Trong câu này, <span class="q-hanzi">之</span> (chữ thứ 2) là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box correct">b/ Đại từ ✓</div>
+                <div class="option-box">c/ Trợ từ</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân chi thân thể, dĩ y hộ chi, dĩ thực dưỡng chi.</p>
+                <p><b>Dịch nghĩa:</b> Thân thể của con người, lấy áo che chở <i>nó</i> (thân thể)...</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> thứ hai đứng sau động từ <span class="q-hanzi">護</span> làm tân ngữ thay thế cho <span class="q-hanzi">身體</span>, đóng vai trò <b>Đại từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 92 -->
+        <div class="question-item">
+            <div class="q-title">Câu 92: <span class="q-hanzi">人之身體，以衣護之，以食養之。</span> Trong câu này, <span class="q-hanzi">之</span> (chữ thứ 3) là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box">b/ Trợ từ</div>
+                <div class="option-box correct">c/ Đại từ ✓</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân chi thân thể, dĩ y hộ chi, dĩ thực dưỡng chi.</p>
+                <p><b>Dịch nghĩa:</b> ...lấy thức ăn nuôi dưỡng <i>nó</i> (thân thể).</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> thứ ba đứng sau động từ <span class="q-hanzi">養</span> làm tân ngữ thay thế cho <span class="q-hanzi">身體</span>, đóng vai trò <b>Đại từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 93 -->
+        <div class="question-item">
+            <div class="q-title">Câu 93: <span class="q-hanzi">其人弗能應也。</span> Trong câu này, <span class="q-hanzi">其</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Đại từ ✓</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Phó từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Kỳ nhân phất năng ứng dã.</p>
+                <p><b>Dịch nghĩa:</b> Người <i>ấy</i> không thể trả lời được.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">其</span> (kỳ) đứng trước danh từ <span class="q-hanzi">人</span> làm định ngữ chỉ định đối tượng ("người ấy/kẻ đó"), đóng vai trò <b>Đại từ chỉ định</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 94 -->
+        <div class="question-item">
+            <div class="q-title">Câu 94: <span class="q-hanzi">上古有人居焉。</span> Trong câu này, <span class="q-hanzi">焉</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box correct">c/ Đại từ ✓</div>
+                <div class="option-box">d/ Phó từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Thượng cổ hữu nhân cư yên.</p>
+                <p><b>Dịch nghĩa:</b> Thời thượng cổ có người sống ở <i>đó/nơi ấy</i>.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">焉</span> (yên) là kiêm từ biểu thị "於之" (ở đó), đóng vai trò làm <b>Đại từ kiêm giới từ</b> chỉ nơi chốn.</p>
+            </div>
+        </div>
+
+        <!-- Câu 95 -->
+        <div class="question-item">
+            <div class="q-title">Câu 95: <span class="q-hanzi">因名昇龍，而都之。</span> Trong câu này, <span class="q-hanzi">因</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Trợ từ</div>
+                <div class="option-box correct">b/ Liên từ ✓</div>
+                <div class="option-box">c/ Giới từ</div>
+                <div class="option-box">d/ Phó từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân danh Thăng Long, nhi đô chi.</p>
+                <p><b>Dịch nghĩa:</b> <i>Nhân đó/Cho nên</i> đặt tên là Thăng Long, mà đóng đô ở đấy.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">因</span> (nhân) dùng nối kết nguyên nhân xảy ra trước đó để dẫn tới hành động tiếp theo, đóng vai trò <b>Liên từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 96 -->
+        <div class="question-item">
+            <div class="q-title">Câu 96: <span class="q-hanzi">因戒生，因定發慧。</span> Trong câu này, <span class="q-hanzi">因</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box correct">b/ Giới từ ✓</div>
+                <div class="option-box">c/ Trợ từ</div>
+                <div class="option-box">d/ Liên từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân giới sinh, nhân định phát tuệ.</p>
+                <p><b>Dịch nghĩa:</b> <i>Do/Bởi vì</i> giữ giới mà sinh ra định, <i>do</i> định mà phát sinh trí tuệ.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">因</span> đứng trước các danh từ <span class="q-hanzi">戒</span> và <span class="q-hanzi">定</span> để giới thiệu nguyên nhân/căn cứ, đóng vai trò <b>Giới từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 97 -->
+        <div class="question-item">
+            <div class="q-title">Câu 97: <span class="q-hanzi">因名昇龍，而都之。</span> Trong câu này, <span class="q-hanzi">之</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box">b/ Trợ từ</div>
+                <div class="option-box correct">c/ Đại từ ✓</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân danh Thăng Long, nhi đô chi.</p>
+                <p><b>Dịch nghĩa:</b> Nhân đó đặt tên là Thăng Long, mà đóng đô ở <i>nơi ấy</i>.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">之</span> đứng sau động từ <span class="q-hanzi">都</span> (đóng đô) làm tân ngữ thay thế cho địa danh Thăng Long, đóng vai trò <b>Đại từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 98 -->
+        <div class="question-item">
+            <div class="q-title">Câu 98: <span class="q-hanzi">其角與皮，皆可制器。</span> Trong câu này, <span class="q-hanzi">與</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Phó từ</div>
+                <div class="option-box correct">b/ Liên từ ✓</div>
+                <div class="option-box">c/ Trợ từ</div>
+                <div class="option-box">d/ Giới từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Kỳ giác dữ bì, giai khả chế khí.</p>
+                <p><b>Dịch nghĩa:</b> Sừng <i>và</i> da của nó, đều có thể chế tạo đồ dùng.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">與</span> (dữ) nối giữa hai danh từ có quan hệ đẳng lập (<span class="q-hanzi">角</span> và <span class="q-hanzi">皮</span>), đóng vai trò <b>Liên từ</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 99 -->
+        <div class="question-item">
+            <div class="q-title">Câu 99: <span class="q-hanzi">因名昇龍，即今之京城也。</span> Trong câu này, <span class="q-hanzi">也</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box correct">b/ Trợ từ ✓</div>
+                <div class="option-box">c/ Liên từ</div>
+                <div class="option-box">d/ Phó từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Nhân danh Thăng Long, tức kim chi kinh thành dã.</p>
+                <p><b>Dịch nghĩa:</b> Nhân đó đặt tên là Thăng Long, tức là kinh thành ngày nay <i>vậy</i>.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">也</span> (dã) đứng ở cuối câu phán đoán để kết thúc câu và thể hiện ngữ khí khẳng định, đóng vai trò <b>Trợ từ ngữ khí</b>.</p>
+            </div>
+        </div>
+
+        <!-- Câu 100 -->
+        <div class="question-item">
+            <div class="q-title">Câu 100: <span class="q-hanzi">其人弗能應也。</span> Trong câu này, <span class="q-hanzi">能</span> là từ loại gì?</div>
+            <div class="options-grid">
+                <div class="option-box">a/ Giới từ</div>
+                <div class="option-box">b/ Liên từ</div>
+                <div class="option-box correct">c/ Trợ động từ ✓</div>
+                <div class="option-box">d/ Trợ từ</div>
+            </div>
+            <div class="explanation-box">
+                <p><b>Âm Hán Việt:</b> Kỳ nhân phất năng ứng dã.</p>
+                <p><b>Dịch nghĩa:</b> Người ấy không <i>thể</i> trả lời được.</p>
+                <p><b>Giải thích ngữ pháp:</b> Chữ <span class="q-hanzi">能</span> (năng) đứng trước động từ <span class="q-hanzi">應</span> (ứng đáp/trả lời) để biểu thị khả năng, đóng vai trò <b>Trợ động từ</b>.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Đề Cương Ôn Thi Hán Cổ HK4 - Chúc bạn học tập hiệu quả và hoàn thành tốt bài thi!</p>
+    </footer>
+</div>
+
+</body>
+</html>

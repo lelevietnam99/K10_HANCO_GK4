@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Thi Hán Cổ HK4 - Phần I: 60 Cụm Chữ Hán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #070913;
+            --card-bg: rgba(20, 25, 55, 0.65);
+            --border-glow: #00d2ff;
+            --accent-purple: #9d4edd;
+            --accent-pink: #f72585;
+            --text-light: #e0e6ed;
+            --hanzi-color: #ffd700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            padding-bottom: 50px;
+        }
+
+        /* Hiệu ứng nền vũ trụ */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.2; transform: scale(0.8); }
+        }
+
+        .nebula {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.25;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .nebula-1 { top: -100px; left: -100px; background: #7b2cbf; }
+        .nebula-2 { bottom: -100px; right: -100px; background: #00b4d8; }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: rgba(10, 14, 35, 0.8);
+            border-bottom: 1px solid rgba(0, 210, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--border-glow), 0 0 20px var(--accent-purple);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #a0aec0;
+            font-size: 1.05rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-pink));
+            color: #fff;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Controls */
+        .controls {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            background: rgba(15, 20, 45, 0.8);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--border-glow);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #1e295d, #0f172a);
+            color: var(--border-glow);
+            border: 1px solid var(--border-glow);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.15);
+        }
+
+        .btn:hover {
+            background: var(--border-glow);
+            color: #000;
+            box-shadow: 0 0 20px var(--border-glow);
+        }
+
+        /* Container & Cards */
+        .grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.3);
+            border-color: var(--border-glow);
+        }
+
+        .card-stt {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hanzi {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2.8rem;
+            color: var(--hanzi-color);
+            text-align: center;
+            margin: 15px 0 10px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .phien-am {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .giai-nghia {
+            font-size: 0.95rem;
+            color: #b0c4de;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-purple);
+            margin-top: 10px;
+            line-height: 1.4;
+            transition: opacity 0.3s;
+        }
+
+        .hidden-content {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .show-btn {
+            background: transparent;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            color: #a0aec0;
+            padding: 6px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .show-btn:hover {
+            border-color: var(--border-glow);
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            .grid-container { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+            .controls { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="starsContainer"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+
+    <header>
+        <h1>ÔN THI HÁN CỔ - HỌC KỲ 4</h1>
+        <p>Giáo Thọ Sư: NS. Huệ Chơn | Đào Tạo Từ Xa Khóa X</p>
+        <span class="badge">PHẦN I: PHIÊN ÂM & GIẢI NGHĨA (60 CỤM CHỮ HÁN)</span>
+    </header>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Tra cứu Chữ Hán, Phiên âm hoặc Nghĩa..." onkeyup="filterCards()">
+        </div>
+        <div class="btn-group">
+            <button class="btn" onclick="toggleAllAnswers(true)">HIỆN TẤT CẢ</button>
+            <button class="btn" onclick="toggleAllAnswers(false)">ẨN TẤT CẢ (LUYỆN TẬP)</button>
+        </div>
+    </div>
+
+    <div class="grid-container" id="cardsGrid">
+        <!-- JS sẽ tự động sinh 60 thẻ chữ Hán tại đây -->
+    </div>
+
+    <script>
+        // Dữ liệu 60 cụm chữ Hán từ Đề cương
+        const data = [
+            { stt: 1, hanzi: "佛堂", am: "Phật đường", nghia: "Phòng thờ Phật, nhà thờ Phật trong chùa hoặc tại gia." },
+            { stt: 2, hanzi: "最高", am: "Tối cao", nghia: "Cao nhất, ở vị trí hoặc cấp bậc cao nhất." },
+            { stt: 3, hanzi: "尊堂", am: "Tôn đường", nghia: "Từ kính xưng để chỉ mẹ của người đối thoại (hoặc cha mẹ)." },
+            { stt: 4, hanzi: "佛前", am: "Phật tiền", nghia: "Trước bàn thờ Phật, trước điện Phật." },
+            { stt: 5, hanzi: "助詞", am: "Trợ từ", nghia: "Từ phụ trợ trong ngữ pháp (dùng để nhấn mạnh, biểu thị biểu cảm/cấu trúc)." },
+            { stt: 6, hanzi: "法乳", am: "Pháp nhũ", nghia: "Sữa pháp (dùng chỉ ơn nghĩa nuôi dưỡng tuệ mạng của Thầy/Phật)." },
+            { stt: 7, hanzi: "清高", am: "Thanh cao", nghia: "Trong sạch, cao thượng, không màng danh lợi tầm thường." },
+            { stt: 8, hanzi: "永遠", am: "Vĩnh viễn", nghia: "Lâu dài mãi mãi, không bao giờ thay đổi." },
+            { stt: 9, hanzi: "請教", am: "Thỉnh giáo", nghia: "Xin được chỉ dạy, hỏi xin ý kiến người trên." },
+            { stt: 10, hanzi: "坐禪", am: "Tọa thiền", nghia: "Ngồi thiền, lắng tĩnh tâm trí theo phương pháp Phật giáo." },
+            { stt: 11, hanzi: "大同", am: "Đại đồng", nghia: "Thế giới hòa bình, bình đẳng, mọi người như một." },
+            { stt: 12, hanzi: "大家", am: "Đại gia", nghia: "Mọi người, tất cả mọi người / Gia tộc lớn." },
+            { stt: 13, hanzi: "高僧", am: "Cao tăng", nghia: "Vị tăng sĩ có đức độ và đạo hạnh cao thâm." },
+            { stt: 14, hanzi: "真如", am: "Chân như", nghia: "Thật tính tự nhiên, bản thể chân thật không biến đổi của vạn pháp." },
+            { stt: 15, hanzi: "恆河", am: "Hằng hà", nghia: "Sông Hằng (Ấn Độ), thường dùng ví dụ cho số lượng cực kỳ nhiều." },
+            { stt: 16, hanzi: "大乘", am: "Đại thừa", nghia: "Cỗ xe lớn; pháp môn Phật giáo hướng đến cứu độ tất cả chúng sinh." },
+            { stt: 17, hanzi: "兄長", am: "Huỳnh trưởng", nghia: "Anh lớn, người anh đáng kính trọng." },
+            { stt: 18, hanzi: "河內", am: "Hà Nội", nghia: "Thủ đô Hà Nội (trong sông) / Nơi trong lòng sông." },
+            { stt: 19, hanzi: "禮堂", am: "Lễ đường", nghia: "Hội trường, phòng lớn dùng để cử hành các lễ nghi." },
+            { stt: 20, hanzi: "禮誦", am: "Lễ tụng", nghia: "Lạy Phật và tụng đọc kinh điển." },
+            { stt: 21, hanzi: "無常", am: "Vô thường", nghia: "Không vĩnh cửu, luôn luôn biến đổi, sinh diệt từng khoảnh khắc." },
+            { stt: 22, hanzi: "矛盾", am: "Mâu thuẩn", nghia: "Mâu thuẫn (cây giáo và cái mộc); sự trái ngược, chọi nhau." },
+            { stt: 23, hanzi: "和平", am: "Hòa bình", nghia: "Trạng thái yên ổn, không có chiến tranh xung đột." },
+            { stt: 24, hanzi: "住持", am: "Trụ trì", nghia: "Vị hòa thượng/chư tăng quản lý và giữ gìn một ngôi chùa." },
+            { stt: 25, hanzi: "農具", am: "Nông cụ", nghia: "Dụng cụ, công cụ dùng trong việc làm nông nghiệp." },
+            { stt: 26, hanzi: "父子", am: "Phụ tử", nghia: "Cha và con trai." },
+            { stt: 27, hanzi: "論語", am: "Luận ngữ", nghia: "Bộ sách ghi chép lời dạy của Khổng Tử và các đệ tử." },
+            { stt: 28, hanzi: "出家", am: "Xuất gia", nghia: "Rời khỏi gia đình thế tục để tu hành Phật đạo." },
+            { stt: 29, hanzi: "在家", am: "Tại gia", nghia: "Ở nhà; người tu Phật nhưng vẫn sống cùng gia đình (cư sĩ)." },
+            { stt: 30, hanzi: "西方", am: "Tây phương", nghia: "Hướng Tây; cõi Tây Phương Cực Lạc." },
+            { stt: 31, hanzi: "至誠", am: "Chí thành", nghia: "Hết sức chân thành, lòng thành kính tột cùng." },
+            { stt: 32, hanzi: "白衣", am: "Bạch y", nghia: "Áo trắng; người mặc áo trắng (chỉ người tại gia, không phải chư tăng)." },
+            { stt: 33, hanzi: "貧農", am: "Bần nông", nghia: "Người nông dân nghèo khổ, ít ruộng đất." },
+            { stt: 34, hanzi: "高等", am: "Cao đẳng", nghia: "Bậc cao, trình độ cấp cao." },
+            { stt: 35, hanzi: "部長", am: "Bộ trưởng", nghia: "Người đứng đầu một Bộ trong cơ quan nhà nước." },
+            { stt: 36, hanzi: "圓滿", am: "Viên mãn", nghia: "Trọn vẹn, đầy đủ tốt đẹp, hoàn hảo không thiếu sót." },
+            { stt: 37, hanzi: "高尚", am: "Cao thượng", nghia: "Phẩm giá trong sạch, cao đẹp, có đạo đức vượt trội." },
+            { stt: 38, hanzi: "北京", am: "Bắc Kinh", nghia: "Thủ đô Bắc Kinh của Trung Quốc." },
+            { stt: 39, hanzi: "諸位", am: "Chư vị", nghia: "Các vị, các ngài (từ xưng hô kính trọng số nhiều)." },
+            { stt: 40, hanzi: "恭敬", am: "Cung kính", nghia: "Kính trọng và lịch sự hết lòng." },
+            { stt: 41, hanzi: "法乳", am: "Pháp nhũ", nghia: "Sữa pháp nuôi dưỡng tâm tuệ." },
+            { stt: 42, hanzi: "如意", am: "Như ý", nghia: "Vừa lòng hợp ý, được như điều mong muốn." },
+            { stt: 43, hanzi: "肉眼", am: "Nhục nhãn", nghia: "Mắt thịt thông thường của phàm phu (đối lại với Huệ nhãn, Phật nhãn)." },
+            { stt: 44, hanzi: "內在", am: "Nội tại", nghia: "Bên trong, vốn có bên trong bản thân sự vật." },
+            { stt: 45, hanzi: "內助", am: "Nội trợ", nghia: "Sự giúp đỡ bên trong; người vợ giúp đỡ chồng quán xuyên việc nhà." },
+            { stt: 46, hanzi: "農民", am: "Nông dân", nghia: "Người làm nghề nông, cày cấy ruộng đồng." },
+            { stt: 47, hanzi: "犯戒", Hanzi: "犯戒", am: "Phạm giới", nghia: "Vi phạm các giới luật đã phát nguyện gìn giữ." },
+            { stt: 48, hanzi: "反面", am: "Phản diện", nghia: "Mặt đối lập, mặt trái, nhân vật tiêu cực." },
+            { stt: 49, hanzi: "分離", am: "Phân ly", nghia: "Chia rẽ, rời xa nhau." },
+            { stt: 50, hanzi: "青年", am: "Thanh niên", nghia: "Người trẻ tuổi." },
+            { stt: 51, hanzi: "成果", am: "Thành quả", nghia: "Kết quả gặt hái được sau quá trình nỗ lực." },
+            { stt: 52, hanzi: "清淨", am: "Thanh tịnh", nghia: "Trong sạch, lặng lẽ, không ô nhiễm bụi trần." },
+            { stt: 53, hanzi: "成就", am: "Thành tựu", nghia: "Đạt được kết quả trọn vẹn, hoàn thành tốt đẹp." },
+            { stt: 54, hanzi: "成員", am: "Thành viên", nghia: "Người thuộc một tổ chức, tập thể." },
+            { stt: 55, hanzi: "青春", am: "Thanh xuân", nghia: "Tuổi trẻ tươi đẹp rực rỡ như mùa xuân." },
+            { stt: 56, hanzi: "匹夫", am: "Thất phu", nghia: "Người nam giới bình thường / kẻ thất phu vô học." },
+            { stt: 57, hanzi: "七情", am: "Thất tình", nghia: "Bảy trạng thái cảm xúc: Hỷ (vui), Nộ (giận), Ai (buồn), Lạc (vui mừng), Ái (yêu), Ố (ghét), Dục (muốn)." },
+            { stt: 58, hanzi: "譬喻", am: "Thí dụ", nghia: "Lấy ví dụ, so sánh để làm rõ ý nghĩa." },
+            { stt: 59, hanzi: "是非", am: "Thị phi", nghia: "Phải trái, đúng sai; chuyện tranh chấp gièm pha." },
+            { stt: 60, hanzi: "市長", am: "Thị trưởng", nghia: "Người đứng đầu quản lý một thành phố." }
+        ];
+
+        // Tạo hiệu ứng sao nhấp nháy trên background
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                container.appendChild(star);
+            }
+        }
+
+        // Render danh sách các card
+        function renderCards() {
+            const grid = document.getElementById('cardsGrid');
+            grid.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.setAttribute('data-search', `${item.hanzi} ${item.am} ${item.nghia}`.toLowerCase());
+                
+                card.innerHTML = `
+                    <span class="card-stt">#${item.stt < 10 ? '0' + item.stt : item.stt}</span>
+                    <div class="hanzi">${item.hanzi}</div>
+                    <div class="answer-block">
+                        <div class="phien-am">${item.am}</div>
+                        <div class="giai-nghia">${item.nghia}</div>
+                    </div>
+                    <button class="show-btn" onclick="toggleCard(this)">Ẩn / Hiện Đáp Án</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Ẩn/Hiện riêng từng card
+        function toggleCard(btn) {
+            const answerBlock = btn.previousElementSibling;
+            answerBlock.classList.toggle('hidden-content');
+        }
+
+        // Ẩn/Hiện tất cả đáp án
+        function toggleAllAnswers(show) {
+            const blocks = document.querySelectorAll('.answer-block');
+            blocks.forEach(block => {
+                if (show) {
+                    block.classList.remove('hidden-content');
+                } else {
+                    block.classList.add('hidden-content');
+                }
+            });
+        }
+
+        // Lọc theo từ khóa tìm kiếm
+        function filterCards() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const text = card.getAttribute('data-search');
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Khởi chạy khi tải trang
+        window.onload = function() {
+            createStars();
+            renderCards();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Thi Hán Cổ HK4 - Phần III: Dịch Nghĩa & Viết Chữ Hán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #060913;
+            --card-bg: rgba(16, 22, 50, 0.75);
+            --border-glow: #00f0ff;
+            --accent-purple: #8a2be2;
+            --accent-gold: #ffd700;
+            --accent-pink: #ff1493;
+            --text-light: #e2e8f0;
+            --am-color: #38bdf8;
+            --dich-color: #4ade80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 60px;
+        }
+
+        /* Background Vũ trụ */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #0f172a 0%, #020617 100%);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+            100% { opacity: 0.2; transform: scale(0.8); }
+        }
+
+        .nebula {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.28;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .nebula-1 { top: -10%; left: -10%; background: var(--accent-purple); }
+        .nebula-2 { bottom: -10%; right: -10%; background: var(--border-glow); }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 35px 20px 20px;
+            background: rgba(10, 15, 30, 0.85);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.1rem;
+            color: #fff;
+            text-shadow: 0 0 12px var(--border-glow), 0 0 25px var(--accent-purple);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            margin-top: 12px;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+        }
+
+        /* Controls */
+        .controls {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 22px;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 240, 255, 0.4);
+            background: rgba(15, 23, 42, 0.85);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--border-glow);
+            box-shadow: 0 0 18px rgba(0, 240, 255, 0.5);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #1e1b4b, #0f172a);
+            color: var(--border-glow);
+            border: 1px solid var(--border-glow);
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--border-glow);
+            color: #000;
+            box-shadow: 0 0 22px var(--border-glow);
+            font-weight: bold;
+        }
+
+        /* List container */
+        .list-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .sentence-card:hover {
+            border-color: var(--border-glow);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .stt-badge {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--border-glow);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .prompt-am {
+            font-size: 1.25rem;
+            color: var(--am-color);
+            font-weight: bold;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            padding-right: 60px;
+        }
+
+        .answer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .hidden-answer {
+            display: none !important;
+        }
+
+        .block-hanzi {
+            background: rgba(255, 215, 0, 0.08);
+            border-left: 4px solid var(--accent-gold);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            font-family: 'Noto Serif TC', serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            line-height: 1.5;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+        }
+
+        .block-dich {
+            background: rgba(74, 222, 128, 0.1);
+            border-left: 4px solid var(--dich-color);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+
+        .block-dich span {
+            color: var(--dich-color);
+            font-weight: bold;
+        }
+
+        .block-explain {
+            background: rgba(138, 43, 226, 0.12);
+            border-left: 4px solid var(--accent-purple);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .block-explain strong {
+            color: #f472b6;
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: 1px dashed rgba(0, 240, 255, 0.4);
+            color: var(--border-glow);
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--border-glow);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            .prompt-am { font-size: 1.1rem; }
+            .block-hanzi { font-size: 1.5rem; }
+            .controls { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="starsContainer"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+
+    <header>
+        <h1>ÔN THI HÁN CỔ - HỌC KỲ 4</h1>
+        <p>Giáo Thọ Sư: NS. Huệ Chơn | Đào Tạo Từ Xa Khóa X</p>
+        <span class="badge">PHẦN III: NHÌN ÂM HÁN VIỆT -> DỊCH NGHĨA & VIẾT CHỮ HÁN (22 CÂU)</span>
+    </header>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm Âm Hán Việt, Chữ Hán, Nghĩa..." onkeyup="filterSentences()">
+        </div>
+        <div class="btn-group">
+            <button class="btn" onclick="toggleAllAnswers(true)">HIỆN ĐÁP ÁN</button>
+            <button class="btn" onclick="toggleAllAnswers(false)">LỆNH LUYỆN VIẾT (ẨN CHỮ)</button>
+        </div>
+    </div>
+
+    <div class="list-container" id="sentencesList">
+        <!-- JS sinh 22 câu tại đây -->
+    </div>
+
+    <script>
+        // Dữ liệu 22 câu Phần III
+        const data = [
+            {
+                stt: 1,
+                am: "Quang âm tợ (tự) tiễn, nhật nguyệt như thoa, vô thường tấn tốc.",
+                hanzi: "光陰似剪，日月如梭，無常進速。",
+                dich: "Thời gian tợ tên bắn, ngày tháng như thoi đưa, vô thường nhanh chóng.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 光陰 (Quang âm: thời gian), 似 (Tợ: giống như), 剪/箭 (Tiễn: mũi tên), 日月 (Nhật nguyệt: ngày tháng), 梭 (Thoa: con thoi dệt vải), 無常 (Vô thường), 進速 (Tấn tốc: nhanh chóng)."
+            },
+            {
+                stt: 2,
+                am: "Đại chúng đãn niệm vô thường, thận vật phóng dật.",
+                hanzi: "大眾但念無常，慎勿放逸。",
+                dich: "Đại chúng chỉ nhớ nghĩ đến vô thường, cẩn thận chớ buông lung.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 大眾 (Đại chúng), 但 (Đãn: chỉ), 念 (Niệm: nhớ nghĩ), 慎 (Thận: cẩn thận), 勿 (Vật: chớ/không nên), 放逸 (Phóng dật: lười biếng, xao nhãng)."
+            },
+            {
+                stt: 3,
+                am: "Ngô đồng lưỡng chu, chi cao diệp đại.",
+                hanzi: "梧桐兩株，枝高葉大。",
+                dich: "Hai cây ngô đồng, cành cao lá to.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 梧桐 (Ngô đồng: tên loài cây), 兩株 (Lưỡng chu: 2 cây - 株 là lượng từ cho cây), 枝 (Chi: cành cây), 葉 (Diệp: lá cây)."
+            },
+            {
+                stt: 4,
+                am: "Xuân hạ thu đông, thị vi tứ quý.",
+                hanzi: "春夏秋冬，是為四季。",
+                dich: "Xuân hạ thu đông, đó là 4 mùa.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 春夏秋冬 (Xuân hạ thu đông), 是為 (Thị vi: ấy là/đó là), 四季 (Tứ quý: 4 mùa trong năm)."
+            },
+            {
+                stt: 5,
+                am: "Hữu nông phu, trú sơn hạ, nhật sơ thăng, hạ sừ xuất.",
+                hanzi: "有農夫，住山下，日初升，荷鋤出。",
+                dich: "Có bác nông phu, ở dưới núi, mặt trời vừa mọc, vác cuốc ra đồng.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 農夫 (Nông phu: người làm nông), 住 (Trú: ở/cư trú), 初升 (Sơ thăng: vừa mọc lên), 荷 (Hạ: vác), 鋤 (Sừ: cây cuốc)."
+            },
+            {
+                stt: 6,
+                am: "Thủ hỏa nhiên chúc, quang chiếu tứ bích.",
+                hanzi: "取火燃燭，光照四壁。",
+                dich: "Lấy lửa đốt đuốc/nến, ánh sáng chiếu lên bốn vách.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 取 (Thủ: lấy), 燃 (Nhiên: đốt/cháy), 燭 (Chúc: cây nến/đèn cầy), 照 (Chiếu: soi sáng), 壁 (Bích: bức tường/vách)."
+            },
+            {
+                stt: 7,
+                am: "Nhân tọa ảnh diệc tọa, nhân hành ảnh diệc hành.",
+                hanzi: "人坐影亦坐，人行影亦行。",
+                dich: "Người ngồi bóng/ảnh cũng ngồi, người đi bóng/ảnh cũng đi.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 坐 (Tọa: ngồi), 影 (Ảnh: cái bóng), 亦 (Diệc: cũng - phó từ), 行 (Hành: đi)."
+            },
+            {
+                stt: 8,
+                am: "Tây phong xuy lai, lạc diệp mãn giai.",
+                hanzi: "西風吹來，落葉滿階。",
+                dich: "Gió tây thổi đến, lá rụng đầy thềm.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 西風 (Tây phong: gió mùa tây/thu), 吹 (Xuy: thổi), 落葉 (Lạc diệp: lá rụng), 滿 (Mãn: đầy/tràn), 階 (Giai: bậc thềm)."
+            },
+            {
+                stt: 9,
+                am: "Vũ tương tình, hà thủy thanh.",
+                hanzi: "雨將晴，河水清。",
+                dich: "Mưa sắp tạnh, nước sông trong.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 雨 (Vũ: mưa), 將 (Tương: sắp - phó từ), 晴 (Tình: tạnh mưa/nắng lên), 清 (Thanh: trong trẻo)."
+            },
+            {
+                stt: 10,
+                am: "Lưỡng ngư ông, tu my giai bạch, phi tuy y, đới (đái) nhược mạo.",
+                hanzi: "兩漁翁，鬚眉皆白，披蓑衣，戴箬帽。",
+                dich: "Hai ông chài, râu và lông mày đều bạc, khoác áo tơi, đội nón tre.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 漁翁 (Ngư ông: ông lão đánh cá), 鬚眉 (Tu my: râu và lông mày), 披 (Phi: khoác lên), 蓑衣 (Tuy y: áo tơi lá), 戴 (Đái: đội), 箬帽 (Nhược mạo: nón lá tre)."
+            },
+            {
+                stt: 11,
+                am: "Đồng tọa ngạn thượng, trương võng bộ ngư.",
+                hanzi: "同坐岸上，張網捕魚。",
+                dich: "Cùng ngồi trên bờ sông, giăng lưới bắt cá.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 岸上 (Ngạn thượng: trên bờ), 張 (Trương: giăng/mở ra), 網 (Võng: cái lưới), 捕 (Bộ: bắt/bắt cá)."
+            },
+            {
+                stt: 12,
+                am: "Ngưu lực đại, năng canh điền, năng vãn xa.",
+                hanzi: "牛力大，能耕田，能挽車。",
+                dich: "Bò/trâu sức mạnh, có thể cày ruộng, có thể kéo xe.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 能 (Năng: có thể), 耕田 (Canh điền: cày ruộng), 挽 (Vãn: kéo/kéo lôi), 車 (Xa: cái xe)."
+            },
+            {
+                stt: 13,
+                am: "Kỳ nhục khả thực, kỳ nhũ khả ẩm.",
+                hanzi: "其肉可食，其乳可飲。",
+                dich: "Thịt bò ăn được, sữa nó uống được.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 其 (Kỳ: của nó - đại từ), 肉 (Nhục: thịt), 食 (Thực: ăn), 乳 (Nhũ: sữa), 飲 (Ẩm: uống)."
+            },
+            {
+                stt: 14,
+                am: "Kỳ giác dữ bì, giai khả chế khí.",
+                hanzi: "其角與皮，皆可制器。",
+                dich: "Sừng và da của nó đều có thể chế tạo đồ dùng.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 角 (Giác: cái sừng), 皮 (Bì: lớp da), 與 (Dữ: và/với), 皆 (Giai: đều - phó từ), 制器 (Chế khí: chế tạo dụng cụ)."
+            },
+            {
+                stt: 15,
+                am: "Đại chúng đương cần tinh tấn(tiến), như cứu đầu nhiên.",
+                hanzi: "大眾當勤精進，如救頭燃。",
+                dich: "Đại chúng phải nên siêng năng tinh tấn, như cứu lửa cháy trên đầu.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 當 (Đương: nên/phải), 勤 (Cần: siêng năng), 精進 (Tinh tấn), 救 (Cứu: cứu giúp), 燃 (Nhiên: đốt cháy)."
+            },
+            {
+                stt: 16,
+                am: "Đãn niệm vô thường, thận vật phóng dật.",
+                hanzi: "但念無常，慎勿放逸。",
+                dich: "Chỉ nhớ nghĩ vô thường, cẩn thận chớ buông lung.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 但 (Đãn: chỉ), 慎 (Thận: cẩn thận/thận trọng), 勿 (Vật: chớ/không được), 放逸 (Phóng dật)."
+            },
+            {
+                stt: 17,
+                am: "Bộ ảnh nã phong, ngư tử võng phá.",
+                hanzi: "捕影拿風；魚死網破。",
+                dich: "Bắt bóng đuổi theo gió; cá chết lưới rách (ví làm chuyện vô ích, liều lĩnh).",
+                explain: "<strong>Từ vựng luyện viết:</strong> 捕 (Bộ: bắt), 影 (Ảnh: bóng), 拿 (Nã: bắt/nắm lấy), 風 (Phong: gió), 魚死 (Ngư tử: cá chết), 網破 (Võng phá: lưới rách)."
+            },
+            {
+                stt: 18,
+                am: "Quốc gia hưng vong, thất phu hữu trách.",
+                hanzi: "國家興亡，匹夫有責。",
+                dich: "Đất nước hưng vong, người dân thường cũng phải có trách nhiệm.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 興亡 (Hưng vong: thịnh suy, sống còn), 匹夫 (Thất phu: người dân thường), 責 (Trách: trách nhiệm/bổn phận)."
+            },
+            {
+                stt: 19,
+                am: "Thăng Long thành tích hiệu Long Biên địa.",
+                hanzi: "昇龍城昔號龍編地。",
+                dich: "Thành Thăng Long ngày xưa gọi là đất Long Biên.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 昇龍 (Thăng Long), 昔 (Tích: xưa kia/ngày trước - phó từ), 號 (Hiệu: gọi là/xưng là), 龍編 (Long Biên)."
+            },
+            {
+                stt: 20,
+                am: "Thượng cổ hữu nhân cư yên. Chí Lý Thái Tổ phiếm chu Nhĩ Hà tân.",
+                hanzi: "上古有人居焉。至李太祖泛舟珥河津。",
+                dich: "Từ đời thượng cổ đã có người ở nơi đó. Đến đời vua Lý Thái Tổ dong thuyền ở bến sông Nhĩ Hà.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 上古 (Thượng cổ), 居 (Cư: sinh sống), 焉 (Yên: ở đó - trợ từ/đại từ), 泛舟 (Phiếm chu: dạo thuyền), 珥河 (Nhĩ Hà), 津 (Tân: bến sông)."
+            },
+            {
+                stt: 21,
+                am: "Hữu song long dẫn thuyền, nhân danh Thăng Long.",
+                hanzi: "有雙龍引船，因名昇龍。",
+                dich: "Có hai con rồng (hiện lên) dẫn thuyền, nhân đó đặt tên là Thăng Long.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 雙龍 (Song long: hai con rồng), 引 (Dẫn: dẫn dắt/kéo đi), 因 (Nhân: nhân đó - liên từ)."
+            },
+            {
+                stt: 22,
+                am: "Nhi đô chi, tức kim chi kinh thành dã.",
+                hanzi: "而都之，即今之京城也。",
+                dich: "Mà đóng đô nơi ấy, tức là kinh đô hiện nay vậy.",
+                explain: "<strong>Từ vựng luyện viết:</strong> 而 (Nhi: mà), 都 (Đô: đóng đô - động từ), 即 (Tức: chính là/ngay là), 京城 (Kinh thành: thủ đô/kinh đô)."
+            }
+        ];
+
+        // Tạo sao nhấp nháy background
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            for (let i = 0; i < 130; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 2.5 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                container.appendChild(star);
+            }
+        }
+
+        // Render 22 câu
+        function renderSentences() {
+            const container = document.getElementById('sentencesList');
+            container.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'sentence-card';
+                card.setAttribute('data-search', `${item.am} ${item.hanzi} ${item.dich} ${item.explain}`.toLowerCase());
+                
+                card.innerHTML = `
+                    <span class="stt-badge">Câu ${item.stt < 10 ? '0' + item.stt : item.stt}</span>
+                    <div class="prompt-am">Âm: ${item.am}</div>
+                    <div class="answer-container">
+                        <div class="block-hanzi">${item.hanzi}</div>
+                        <div class="block-dich"><span>Dịch:</span> ${item.dich}</div>
+                        <div class="block-explain">${item.explain}</div>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleAnswer(this)">Ẩn / Hiện Đáp Án chữ Hán</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Toggle đáp án riêng từng câu
+        function toggleAnswer(btn) {
+            const ans = btn.previousElementSibling;
+            ans.classList.toggle('hidden-answer');
+        }
+
+        // Toggle đáp án toàn bộ
+        function toggleAllAnswers(show) {
+            const answers = document.querySelectorAll('.answer-container');
+            answers.forEach(ans => {
+                if (show) {
+                    ans.classList.remove('hidden-answer');
+                } else {
+                    ans.classList.add('hidden-answer');
+                }
+            });
+        }
+
+        // Tìm kiếm
+        function filterSentences() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.sentence-card');
+            
+            cards.forEach(card => {
+                const text = card.getAttribute('data-search');
+                if (text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        window.onload = function() {
+            createStars();
+            renderSentences();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Thi Hán Cổ HK4 - Phần II: 30 Câu Phiên Âm & Dịch Nghĩa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #070913;
+            --card-bg: rgba(18, 24, 54, 0.75);
+            --border-glow: #00f0ff;
+            --accent-purple: #7000ff;
+            --accent-pink: #ff007f;
+            --text-light: #e2e8f0;
+            --hanzi-color: #ffd700;
+            --am-color: #54d6ff;
+            --dich-color: #72f270;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 60px;
+        }
+
+        /* Nền Vũ Trụ */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at center, #111827 0%, #030712 100%);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.1; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+            100% { opacity: 0.1; transform: scale(0.8); }
+        }
+
+        .nebula {
+            position: fixed;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            filter: blur(130px);
+            opacity: 0.3;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .nebula-1 { top: 5%; right: -100px; background: var(--accent-purple); }
+        .nebula-2 { bottom: 5%; left: -100px; background: var(--accent-pink); }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 35px 20px 20px;
+            background: rgba(10, 15, 30, 0.85);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.1rem;
+            color: #fff;
+            text-shadow: 0 0 12px var(--border-glow), 0 0 25px var(--accent-purple);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            margin-top: 12px;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        /* Controls */
+        .controls {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 22px;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 240, 255, 0.4);
+            background: rgba(15, 23, 42, 0.85);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--border-glow);
+            box-shadow: 0 0 18px rgba(0, 240, 255, 0.5);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #1e1b4b, #0f172a);
+            color: var(--border-glow);
+            border: 1px solid var(--border-glow);
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--border-glow);
+            color: #000;
+            box-shadow: 0 0 22px var(--border-glow);
+            font-weight: bold;
+        }
+
+        /* List container */
+        .list-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .sentence-card:hover {
+            border-color: var(--border-glow);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .stt-badge {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--border-glow);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .hanzi-sentence {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.8rem;
+            color: var(--hanzi-color);
+            margin-bottom: 18px;
+            line-height: 1.5;
+            padding-right: 60px;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+        }
+
+        .answer-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .hidden-answer {
+            display: none !important;
+        }
+
+        .block-am {
+            background: rgba(0, 180, 216, 0.1);
+            border-left: 4px solid var(--am-color);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+            color: var(--am-color);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .block-dich {
+            background: rgba(114, 242, 112, 0.1);
+            border-left: 4px solid var(--dich-color);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+
+        .block-dich span {
+            color: var(--dich-color);
+            font-weight: bold;
+        }
+
+        .block-explain {
+            background: rgba(112, 0, 255, 0.12);
+            border-left: 4px solid var(--accent-purple);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .block-explain strong {
+            color: var(--accent-pink);
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: 1px dashed rgba(0, 240, 255, 0.4);
+            color: var(--border-glow);
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--border-glow);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            .hanzi-sentence { font-size: 1.4rem; }
+            .controls { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="starsContainer"></div>
+    <div class="nebula nebula-1"></div>
+    <div class="nebula nebula-2"></div>
+
+    <header>
+        <h1>ÔN THI HÁN CỔ - HỌC KỲ 4</h1>
+        <p>Giáo Thọ Sư: NS. Huệ Chơn | Đào Tạo Từ Xa Khóa X</p>
+        <span class="badge">PHẦN II: PHIÊN ÂM, DỊCH NGHĨA & GIẢI THÍCH (30 CÂU)</span>
+    </header>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm Chữ Hán, Phiên âm, Từ vựng..." onkeyup="filterSentences()">
+        </div>
+        <div class="btn-group">
+            <button class="btn" onclick="toggleAllAnswers(true)">HIỆN TẤT CẢ</button>
+            <button class="btn" onclick="toggleAllAnswers(false)">ẨN TẤT CẢ (LUYỆN TẬP)</button>
+        </div>
+    </div>
+
+    <div class="list-container" id="sentencesList">
+        <!-- JS sẽ tự động sinh 30 câu tại đây -->
+    </div>
+
+    <script>
+        // Dữ liệu 30 câu Phần II kèm Giải thích ngữ nghĩa từ vựng
+        const data = [
+            {
+                stt: 1,
+                hanzi: "是日已過，命亦隨減，如少水魚，斯有何樂。",
+                am: "Thị nhật dĩ quá, mệnh/mạng diệc tùy giảm, như thiểu thủy ngư, tư hữu hà lạc.",
+                dich: "Ngày nay đã qua, mạng sống cũng giảm dần, như cá thiếu nước, thì có vui gì?",
+                explain: "<strong>Giải thích:</strong> <i>Thị nhật</i> = Ngày này/ngày nay; <i>Dĩ quá</i> = Đã qua; <i>Diệc</i> = Cũng; <i>Tùy</i> = Theo đó mà; <i>Thiểu thủy ngư</i> = Cá ít nước; <i>Tư</i> = Thì/đó; <i>Hà lạc</i> = Vui gì (câu hỏi tu từ)."
+            },
+            {
+                stt: 2,
+                hanzi: "大眾當勤精進，如救頭燃，但念無常，慎勿放逸。",
+                am: "Đại chúng đương cần tinh tấn(tiến), như cứu đầu nhiên, đãn niệm vô thường, thận vật phóng dật.",
+                dich: "Đại chúng phải nên siêng năng tinh tấn, như cứu lửa cháy trên đầu, chỉ nhớ nghĩ vô thường, cẩn thận chớ buông lung.",
+                explain: "<strong>Giải thích:</strong> <i>Đương</i> = Nên/phải; <i>Cần</i> = Siêng năng; <i>Nhiên</i> = Cháy; <i>Đãn</i> = Chỉ (phó từ); <i>Thận vật</i> = Cẩn thận chớ/không nên; <i>Phóng dật</i> = Buông lơi, lười biếng."
+            },
+            {
+                stt: 3,
+                hanzi: "自知往昔所造惡業，實不當作，生大慚愧。",
+                am: "Tự tri vãng tích sở tạo ác nghiệp, thật bất đương tác, sinh đại tàm quý.",
+                dich: "Tự biết mình từ trước đã tạo ra các nghiệp ác, thật không nên làm mà sinh lòng rất hổ thẹn.",
+                explain: "<strong>Giải thích:</strong> <i>Vãng tích</i> = Quá khứ, ngày trước; <i>Sở tạo</i> = Những gì đã làm; <i>Bất đương tác</i> = Không nên làm; <i>Tàm quý</i> = Hổ thẹn với mình (tàm) và với người (quý)."
+            },
+            {
+                stt: 4,
+                hanzi: "故今澡浴身心，向佛前焚香禮拜，發露懺悔。",
+                am: "Cố kim tháo dục thân tâm, hướng Phật tiền phần hương lễ bái, phát lộ sám hối.",
+                dich: "Cho nên ngày nay ta gột rửa thân tâm, hướng đến trước Phật thắp hương lễ lạy, bày tỏ tội lỗi sám hối.",
+                explain: "<strong>Giải thích:</strong> <i>Tháo dục</i> = Tắm rửa/gột rửa; <i>Phần hương</i> = Thắp/đốt hương; <i>Phát lộ</i> = Bày tỏ ra, không giấu giếm; <i>Sám hối</i> = Ăn ăn lỗi cũ, chừa bỏ lỗi sau."
+            },
+            {
+                stt: 5,
+                hanzi: "梵語懺摩，華言悔過。自知往昔所造惡業，實不當作。",
+                am: "Phạn ngữ sám ma, Hoa ngôn hối quá. Tự tri vãng tích sở tạo ác nghiệp, thật bất đương tác.",
+                dich: "Sám hối, tiếng Phạn gọi là 'Sám-ma', tiếng Trung Hoa dịch là 'Hối quá'. Tự biết mình từ trước đã tạo nhiều nghiệp ác, thật không nên làm.",
+                explain: "<strong>Giải thích:</strong> <i>Phạn ngữ</i> = Tiếng Phạn (Sanskrit); <i>Hoa ngôn</i> = Tiếng Trung Quốc; <i>Hối quá</i> = Ăn ăn sửa chữa lỗi lầm."
+            },
+            {
+                stt: 6,
+                hanzi: "復立誓曰：自今以後，寧啖熱鐵猛火，終不犯戒，作諸惡事。",
+                am: "Phục lập thệ viết: 'Tự kim dĩ hậu, ninh đạm nhiệt thiết mãnh hỏa, chung bất phạm giới, tác chư ác sự.'",
+                dich: "Lại lập lời thệ nguyện: 'Từ nay về sau, con thà nuốt sắt nóng lửa dữ, trọn đời không phạm giới mà làm các việc ác.'",
+                explain: "<strong>Giải thích:</strong> <i>Phục</i> = Lại; <i>Ninh</i> = Thà rằng; <i>Đạm</i> = Ăn/nuốt; <i>Chung bất</i> = Rốt cuộc không / trọn đời không."
+            },
+            {
+                stt: 7,
+                hanzi: "吾矛之利，物無不陷也。",
+                am: "Ngô mâu chi lợi, vật vô bất hãm dã.",
+                dich: "Cây giáo của tôi rất bén, không vật gì là không đâm thủng được.",
+                explain: "<strong>Giải thích:</strong> <i>Ngô</i> = Ta/tôi; <i>Mâu</i> = Cây giáo; <i>Hãm</i> = Đâm xuyên/đâm thủng; <i>Vô bất... dã</i> = Cấu trúc phủ định kép -> Không gì là không..."
+            },
+            {
+                stt: 8,
+                hanzi: "人應曰：“以子之矛，陷子之盾，何如？”。",
+                am: "Nhân ứng viết: 'Dĩ tử chi mâu, hãm tử chi thuẫn, hà như?'.",
+                dich: "Có người đáp rằng: 'Dùng giáo của ông đâm vào cái mộc của ông thì thế nào?'",
+                explain: "<strong>Giải thích:</strong> <i>Ứng</i> = Đáp lại; <i>Tử</i> = Ông/ngài (đại từ xưng hô tôn trọng); <i>Thuẫn</i> = Cái mộc/khiên đỡ; <i>Hà như</i> = Thế nào."
+            },
+            {
+                stt: 9,
+                hanzi: "雨將晴，河水清。兩漁翁，同坐岸上，張網捕魚。",
+                am: "Vũ tương tình, hà thủy thanh. Lưỡng ngư ông, đồng tọa ngạn thượng, trương võng bộ ngư.",
+                dich: "Mưa sắp tạnh, nước sông trong. Hai ông chài cùng ngồi trên bờ, giăng lưới bắt cá.",
+                explain: "<strong>Giải thích:</strong> <i>Tương</i> = Sắp; <i>Tình</i> = Trời tạnh mưa; <i>Thanh</i> = Trong trẻo; <i>Trương võng</i> = Giăng/giăng lưới; <i>Bộ</i> = Bắt/bắt cá."
+            },
+            {
+                stt: 10,
+                hanzi: "牛力大，能耕田，能挽車。其肉可食，其乳可飲。",
+                am: "Ngưu lực đại, năng canh điền, năng vãn xa. Kỳ nhục khả thực, kỳ nhũ khả ẩm.",
+                dich: "Trâu bò sức lớn, có thể cày ruộng, có thể kéo xe. Thịt của nó ăn được, sữa của nó uống được.",
+                explain: "<strong>Giải thích:</strong> <i>Canh điền</i> = Cày ruộng; <i>Vãn xa</i> = Kéo xe; <i>Kỳ</i> = Của nó (đại từ); <i>Thực</i> = Ăn; <i>Ẩm</i> = Uống."
+            },
+            {
+                stt: 11,
+                hanzi: "人應曰：以子之矛，陷子之盾，何如？。其人弗能應也。",
+                am: "Nhân ứng viết: Dĩ tử chi mâu, hãm tử chi thuẫn, hà như?. Kỳ nhân phất năng ứng dã.",
+                dich: "Có người đáp rằng: 'Dùng giáo của ông đâm vào mộc của ông thì sao?'. Người ấy không thể trả lời được.",
+                explain: "<strong>Giải thích:</strong> <i>Kỳ nhân</i> = Người ấy; <i>Phất</i> = Không (đồng nghĩa với 不 Bất); <i>Phất năng ứng</i> = Không thể đáp lại."
+            },
+            {
+                stt: 12,
+                hanzi: "王姓徵，諱側，貉將之女。時交止太守蘇定貪殘，殺其夫。",
+                am: "Vương tính Trưng, húy Trắc, Lạc tướng chi nữ. Thời Giao Chỉ thái thú Tô Định tham tàn, sát kỳ phu.",
+                dich: "Vua họ Trưng, tên húy là Trắc, con gái Lạc tướng. Bấy giờ thái thú Giao Chỉ là Tô Định tham lam hung bạo, giết chồng bà.",
+                explain: "<strong>Giải thích:</strong> <i>Húy</i> = Tên riêng kính xưng; <i>Lạc tướng chi nữ</i> = Con gái của Lạc tướng; <i>Tham tàn</i> = Tham lam tàn bạo; <i>Kỳ phu</i> = Chồng của bà."
+            },
+            {
+                stt: 13,
+                hanzi: "至李太祖泛舟珥河津，有雙龍引船，因名昇龍。",
+                am: "Chí Lý Thái Tổ phiếm chu Nhĩ Hà tân, hữu song long dẫn thuyền, nhân danh Thăng Long.",
+                dich: "Đến đời Lý Thái Tổ dạo thuyền ở bến sông Nhĩ Hà, có hai con rồng dẫn thuyền, nhân đó đặt tên là Thăng Long.",
+                explain: "<strong>Giải thích:</strong> <i>Phiếm chu</i> = Dạo thuyền/thả thuyền; <i>Tân</i> = Bến sông; <i>Song long</i> = Hai con rồng; <i>Nhân danh</i> = Nhân đó đặt tên."
+            },
+            {
+                stt: 14,
+                hanzi: "內心既虛，外緣亦寂。",
+                am: "Nội tâm ký hư, ngoại duyên diệc tịch.",
+                dich: "Tâm bên trong đã rỗng rang (thanh tịnh), duyên bên ngoài cũng lặng lẽ.",
+                explain: "<strong>Giải thích:</strong> <i>Ký</i> = Đã; <i>Hư</i> = Rỗng rang, không vướng bận; <i>Ngoại duyên</i> = Cảnh vật bên ngoài; <i>Tịch</i> = Vắng lặng, yên tĩnh."
+            },
+            {
+                stt: 15,
+                hanzi: "普度眾生，俱成正覺。",
+                am: "Phổ độ chúng sinh, câu thành chánh giác.",
+                dich: "Cứu độ khắp tất cả chúng sinh, đều cùng thành tựu chánh giác.",
+                explain: "<strong>Giải thích:</strong> <i>Phổ度</i> = Cứu độ rộng khắp; <i>Câu</i> = Đều, cùng nhau; <i>Chánh giác</i> = Sự giác ngộ chân chính (Phật quả)."
+            },
+            {
+                stt: 16,
+                hanzi: "長江大海；青山碧水。",
+                am: "Trường giang đại hải; Thanh sơn bích thủy.",
+                dich: "Sông dài biển lớn; Núi xanh nước biếc.",
+                explain: "<strong>Giải thích:</strong> <i>Trường giang</i> = Sông dài; <i>Thanh sơn</i> = Núi xanh; <i>Bích thủy</i> = Nước màu xanh ngọc bích."
+            },
+            {
+                stt: 17,
+                hanzi: "禪是佛心，經是佛語。",
+                am: "Thiền thị Phật tâm, kinh thị Phật ngữ.",
+                dich: "Thiền là tâm Phật, kinh là lời Phật dạy.",
+                explain: "<strong>Giải thích:</strong> <i>Thiền</i> = Sự tĩnh lặng suy ngẫm; <i>Thị</i> = Là (động từ phán đoán); <i>Ngữ</i> = Lời nói."
+            },
+            {
+                stt: 18,
+                hanzi: "佛之弟子有兩成分：出家是僧人，在家是居士。",
+                am: "Phật chi đệ tử hữu lưỡng thành phần: Xuất gia thị tăng nhân, tại gia thị cư sĩ.",
+                dich: "Đệ tử của Phật có hai thành phần: Xuất gia là tăng sĩ, tại gia là cư sĩ.",
+                explain: "<strong>Giải thích:</strong> <i>Chi</i> = Trợ từ kết cấu (của); <i>Lưỡng</i> = Hai; <i>Cư sĩ</i> = Người tu tại gia."
+            },
+            {
+                stt: 19,
+                hanzi: "貉龍君娶嫗姬生百男，是為百越之祖。",
+                am: "Lạc Long Quân thú Âu Cơ sinh bách nam, thị vi Bách Việt chi tổ.",
+                dich: "Lạc Long Quân cưới Âu Cơ sinh ra một trăm con trai, đó là tổ tiên của Bách Việt.",
+                explain: "<strong>Giải thích:</strong> <i>Thú</i> = Cưới (vợ); <i>Bách nam</i> = 100 người con trai; <i>Thị vi</i> = Ấy là / đó là."
+            },
+            {
+                stt: 20,
+                hanzi: "日初升，荷鋤出。日將落，荷鋤歸。",
+                am: "Nhật sơ thăng, hạ sừ xuất. Nhật tương lạc, hạ sừ quy.",
+                dich: "Mặt trời mới mọc, vác cuốc ra đồng. Mặt trời sắp lặn, vác cuốc trở về.",
+                explain: "<strong>Giải thích:</strong> <i>Sơ thăng</i> = Mới mọc lên; <i>Hạ</i> = Vác/vác trên vai; <i>Sừ</i> = Cây cuốc; <i>Tương lạc</i> = Sắp lặn."
+            },
+            {
+                stt: 21,
+                hanzi: "父母恩深終有別，夫妻義重也分離。",
+                am: "Phụ mẫu ân thâm chung hữu biệt; phu thê nghĩa trọng dã phân ly.",
+                dich: "Ơn cha mẹ sâu nặng rồi cũng có ngày cách biệt, nghĩa vợ chồng nặng đày rồi cũng phải chia xa.",
+                explain: "<strong>Giải thích:</strong> <i>Thâm</i> = Sâu sắc; <i>Chung</i> = Rốt cuộc/cuối cùng; <i>Trọng</i> = Nặng đày/coi trọng."
+            },
+            {
+                stt: 22,
+                hanzi: "流水下山非有意，浮雲出岫本無心。",
+                am: "Lưu thủy hạ sơn phi hữu ý, phù vân xuất tụ bổn vô tâm.",
+                dich: "Nước chảy xuống núi không phải có ý, mây trôi khỏi hốc núi vốn dĩ vô tâm.",
+                explain: "<strong>Giải thích:</strong> <i>Lưu thủy</i> = Nước chảy; <i>Phi</i> = Không phải; <i>Phù vân</i> = Mây trôi; <i>Tụ</i> = Hốc núi/đỉnh núi; <i>Bổn</i> = Vốn dĩ."
+            },
+            {
+                stt: 23,
+                hanzi: "人之初性本善。",
+                am: "Nhân chi sơ tính bổn thiện.",
+                dich: "Con người lúc ban đầu bản tính vốn hiền thiện.",
+                explain: "<strong>Giải thích:</strong> Trích câu đầu bài Tam Tự Kinh. <i>Nhân chi sơ</i> = Bắt đầu của con người khi mới sinh ra; <i>Bổn thiện</i> = Vốn dĩ tốt lành."
+            },
+            {
+                stt: 24,
+                hanzi: "秋冬漸寒，草木零落。",
+                am: "Thu Đông tiệm hàn, thảo mộc linh lạc.",
+                dich: "Mùa Thu và Đông dần dần lạnh lẽo, cỏ cây tàn rụng.",
+                explain: "<strong>Giải thích:</strong> <i>Tiệm</i> = Dần dần (phó từ); <i>Hàn</i> = Lạnh; <i>Thảo mộc</i> = Cỏ cây; <i>Linh lạc</i> = Rụng rơi, rụng héo."
+            },
+            {
+                stt: 25,
+                hanzi: "經目之事恐未真，背後之言不深信。",
+                am: "Kinh mục chi sự khủng vị chân, bối hậu chi ngôn bất thâm tín.",
+                dich: "Việc đã qua mắt thấy e chưa chắc đã thật, lời nói sau lưng không nên vội tin sâu.",
+                explain: "<strong>Giải thích:</strong> <i>Kinh mục</i> = Qua mắt thấy; <i>Khủng</i> = E rằng/sợ rằng; <i>Vị chân</i> = Chưa chắc đã thật; <i>Bối hậu</i> = Phía sau lưng; <i>Thâm tín</i> = Tin tưởng sâu sắc."
+            },
+            {
+                stt: 26,
+                hanzi: "人不學則無知，鏡不拂則無光。",
+                am: "Nhân bất học tắc vô tri, kính bất phất tắc vô quang.",
+                dich: "Người không học thì không có tri thức, gương không lau chùi thì không phát sáng.",
+                explain: "<strong>Giải thích:</strong> <i>Tắc</i> = Thì (liên từ); <i>Phất</i> = Lau chùi/phủi bụi; <i>Vô quang</i> = Không có ánh sáng sáng bóng."
+            },
+            {
+                stt: 27,
+                hanzi: "寺北有巖，中有石窟。",
+                am: "Tự bắc hữu nghiêm, trung hữu thạch quật.",
+                dich: "Phía bắc ngôi chùa có ngọn núi đá, bên trong có hang đá.",
+                explain: "<strong>Giải thích:</strong> <i>Tự bắc</i> = Phía bắc chùa; <i>Nghiêm</i> = Núi đá cao; <i>Thạch quật</i> = Hang đá."
+            },
+            {
+                stt: 28,
+                hanzi: "鳥之將死，其鳴也哀；人之將死，其言也善。",
+                am: "Điểu chi tương tử, kỳ minh dã ai; nhân chi tương tử, kỳ ngôn dã thiện.",
+                dich: "Con chim sắp chết thì tiếng kêu đau thương; con người sắp chết thì lời nói tốt lành.",
+                explain: "<strong>Giải thích:</strong> Câu nói nổi tiếng của Tăng Tử. <i>Minh</i> = Tiếng hót/tiếng kêu; <i>Ai</i> = Đau thương/bi ai; <i>Thiện</i> = Tốt đẹp, chân thành."
+            },
+            {
+                stt: 29,
+                hanzi: "有福同享，有難同當。",
+                am: "Hữu phúc đồng hưởng, hữu nạn đồng đương.",
+                dich: "Có phúc cùng hưởng, có tai nạn/khó khăn cùng gánh vác.",
+                explain: "<strong>Giải thích:</strong> Thành ngữ quen thuộc. <i>Đồng</i> = Cùng nhau; <i>Hưởng</i> = Thưởng thức/hưởng thụ; <i>Đương</i> = Gánh vác/chịu đựng."
+            },
+            {
+                stt: 30,
+                hanzi: "不入虎穴，焉得虎子。",
+                am: "Bất nhập hổ huyệt, yên đắc hổ tử.",
+                dich: "Không vào hang cọp, sao bắt được cọp con.",
+                explain: "<strong>Giải thích:</strong> <i>Bất nhập</i> = Không vào; <i>Hổ huyệt</i> = Hang hùm; <i>Yên</i> = Sao/làm sao (đại từ nghi vấn); <i>Đắc</i> = Được/bắt được."
+            }
+        ];
+
+        // Tạo hiệu ứng sao nhấp nháy background
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            for (let i = 0; i < 120; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 2.5 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                container.appendChild(star);
+            }
+        }
+
+        // Render danh sách 30 câu
+        function renderSentences() {
+            const container = document.getElementById('sentencesList');
+            container.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'sentence-card';
+                card.setAttribute('data-search', `${item.hanzi} ${item.am} ${item.dich} ${item.explain}`.toLowerCase());
+                
+                card.innerHTML = `
+                    <span class="stt-badge">Câu ${item.stt < 10 ? '0' + item.stt : item.stt}</span>
+                    <div class="hanzi-sentence">${item.hanzi}</div>
+                    <div class="answer-container">
+                        <div class="block-am"><strong>Âm:</strong> ${item.am}</div>
+                        <div class="block-dich"><span>Dịch:</span> ${item.dich}</div>
+                        <div class="block-explain">${item.explain}</div>
+                    </div>
+                    <button class="toggle-btn" onclick="toggleAnswer(this)">Ẩn / Hiện Chi Tiết</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Ẩn/Hiện từng câu
+        function toggleAnswer(btn) {
+            const ans = btn.previousElementSibling;
+            ans.classList.toggle('hidden-answer');
+        }
+
+        // Ẩn/Hiện toàn bộ
+        function toggleAllAnswers(show) {
+            const answers = document.querySelectorAll('.answer-container');
+            answers.forEach(ans => {
+                if (show) {
+                    ans.classList.remove('hidden-answer');
+                } else {
+                    ans.classList.add('hidden-answer');
+                }
+            });
+        }
+
+        // Tìm kiếm
+        function filterSentences() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.sentence-card');
+            
+            cards.forEach(card => {
+                const text = card.getAttribute('data-search');
+                if (text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        window.onload = function() {
+            createStars();
+            renderSentences();
+        };
+    </script>
+</body>
+</html>
